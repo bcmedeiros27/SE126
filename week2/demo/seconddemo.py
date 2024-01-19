@@ -41,8 +41,3 @@ for index in range(0, total_records):
     average_age = total_age / total_records
     print(f"Average age: {index}\t {average_age}")
 
-total_age = 0
-index = 0
-while index < total_records:
-    index +=1
-    total_age += age[index]
