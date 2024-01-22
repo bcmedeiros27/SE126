@@ -1,0 +1,87 @@
+import csv
+total_records = 0
+desktop = []
+laptop = []
+brand = []
+cpu = []
+ram = []
+gb = []
+drive = []
+drive_type = []
+os = []
+yr = []
+pv1 = desktop
+with open("week2idv/lab2b.csv") as csvfile:
+    file = csv.reader(csvfile)
+    
+    for rec in file:
+        if rec[0] == "D" and rec[0] != "L":
+            desktop.append("desktop")
+        elif rec[0] == "L" and rec[0] != "D":
+            desktop.append("laptop")
+        
+        if rec[1] == "DL" or rec[1] is None:
+            brand.append("DELL")
+        elif rec[1] == "HP":
+            brand.append("HP")
+        elif rec[1] == "GW":
+            brand.append("GW")
+        if rec[2] == "i5" or rec[2] is None:
+             cpu.append("i5")
+        elif rec[2] == "i7":
+             cpu.append("i7")
+        if rec[3] == "08":
+             ram.append("08")
+        elif rec[3] == "16":
+            ram.append("16")
+        if rec[4] == "001TB":
+             gb.append("001TB")
+        elif rec[4] == "500GB":
+             gb.append("500GB")
+        if rec[5] == "1":
+             drive.append("1")
+        elif rec[5] == "2":
+             drive.append("2")
+        if len(rec) == 9:
+             drive_type.append(rec[6])
+        else:
+             drive_type.append("")
+        if len(rec[6]) == 3:
+             os.append(rec[6])
+        if len(rec[7]) == 3:
+             os.append(rec[7])
+        if len(rec) == 9:
+             yr.append(rec[8])
+        else:
+             yr.append(rec[7])
+        # if len(rec[8]) == 2:
+        #      yr.append(rec[8])
+        # if len(rec[7]) == 2:
+        #      yr.append(rec[7])
+
+        
+        
+        
+        
+             
+
+
+       
+             
+        
+             
+        
+        
+
+print("Type\t Brand\t Cpu\t Ram\t 1st Disk  No. Hdd\t2d Disk\t\t Os\tYr")
+for index in range(0, len(desktop)):
+             
+            print (f"{desktop[index]:1}\t {brand[index]:1}\t {cpu[index]:1}\t {ram[index]:1}\t {gb[index]:1}\t    {drive[index]:0}\t\t{drive_type[index]:0}\t\t {os[index]:1}\t{yr[index]:1}")
+#pv1 = desktop
+#pv2 = laptop
+#print(f"{pv1}")
+#print(f"{pv2}")
+ 
+
+        
+
