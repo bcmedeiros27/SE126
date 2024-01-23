@@ -3,7 +3,16 @@ import csv
 
 #total counter for all records
 total_records = 0
-
+#create lists
+comp_type_list = []
+manu_list = []
+processer_list = []
+ram_list = []
+hdd_1_list = []
+num_hdd_list = []
+hdd_2_list = []
+os_list = []
+year_list = []
 print(f"{'desk':8} {'sds':8} {'processer':3} {'ram':3} {'hdd_1':5} {'num_hdd':3}{'hdd_2':5} {'os':4} {'year':4}")
 with open ("week3/lab2b.csv") as csvfile:
     file = csv.reader(csvfile)
@@ -49,7 +58,39 @@ with open ("week3/lab2b.csv") as csvfile:
                 hdd_2 = "Error --" + str(rec[5])
                 os = "error"
                 year = "errpr"
-
+        #append respective values to the approproiate field list
+        comp_type_list.append(comp_type)
+        manu_list.append(manu)
+        processer_list.append(processer)
+        ram_list.append(ram)
+        hdd_1_list.append(hdd_1)
+        num_hdd_list.append(num_hdd)
+        hdd_2_list.append(hdd_2)
+        os_list.append(os)
+        year_list.append(year)
         #final print for each record
         print(f"{comp_type:8} {manu:8} {processer:3} {ram:3} {hdd_1:5} {num_hdd:3}{hdd_2:5} {os:4} {year:4}")
 #Dc from file---------------------------------
+
+#process the list to print the machine data
+for index in range(0, total_records):
+        print(f"{comp_type_list[index]:8} {manu_list[index]:8} {processer_list[index]:3} {ram_list[index]:3} {hdd_1_list[index]:5} {num_hdd_list[index]:3}{hdd_2_list[index]:5} {os_list[index]:4} {year_list[index]:4}")
+        #the length of one of our lists ->len function when passed a list retruns the interger count of values
+#process the lists to: count the number of desktops
+desktop_count = 0
+for index in range(0, len(comp_type_list)):
+        if comp_type_list[index] == "desktop" and int(year_list[index]) <= 16:
+                desktop_count += 1
+print(f"{desktop_count}")               
+        #look through comptypelist to find deskto
+total_size = 0
+count_size = 0
+
+for index in range(0, len(hdd_1_list)):
+        if hdd_1_list[index] == "001TB":
+                total_size += 1
+        else:
+                total_size += 0.5
+        count_size += 1
+average = total_size / count_size # could use len hdd1 list or total records in place of count size
+print(f"Average HDD#1 size {average:0.2f}TB or {average*1000:0.2f}GB")
