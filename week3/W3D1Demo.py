@@ -1,5 +1,18 @@
 #w3d1 demo- text file handling and storing ID to lists
 import csv
+# Your CIO (Chief Information Officer) has asked you to determine how much it would cost the company to replace all machines that are from 2016 and earlier. He plans on spending not more than $2,000 dollars for desktops and $1,500 for laptops.  Store the data from the file lab3a.csv into lists.  Then process the lists to reprint all of the file information (exactly as you did in Lab 2) and also produce an end report that lists the number of desktops that will be replaced, the cost to replace the desktops, the number of laptops that will be replaced, and the cost to replace the laptops.
+#Brandon Medeiros
+#Week #3 - In-Class Lab 
+#1/26/2024
+# comp_type_list = [] List of all computer types
+# manu_list = [] List of all manufacturers
+# processer_list = [] list of processors
+# ram_list = [] #list of ram
+# hdd_1_list = [] #list of hdd size
+# num_hdd_list = [] #number of hdd
+# hdd_2_list = [] #size of hdd2
+# os_list = [] #os systems
+# year_list = [] #os years
 
 #total counter for all records
 total_records = 0
