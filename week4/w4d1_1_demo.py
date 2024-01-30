@@ -37,11 +37,12 @@ average = []
 for i in range(0, len(test1)):
     #caculate avg of student
     avg = (test1[i] + test2[i] + test3[i]) / 3
-    average.append(avg)
+    avg1 = float(f"{avg:.2f}")
+    average.append(avg1)
 #displays studens fname and average
 print(f"{'first':12}\t{'Average':12}")
 for i in range(0, len(fname)):
-    print(f"{fname[i]:12}{average[i]:8.1f}")
+    print(f"{fname[i]:12}{average[i]:8}")
 #display total student in file higest test average and score
 #sequential search search in sequance though and end
 low_name = ""
@@ -84,3 +85,8 @@ for i in range(0, len(all_students)):
 #C 70-79
 #D 60-69
 #F <60
+
+#if average[i] >= 90
+    #let_avg.append("a")
+#elif average[i] > = 80:   
+    #let_avg("b")
