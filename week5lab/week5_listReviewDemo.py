@@ -136,11 +136,24 @@ while menu_choice != 4: #while menu_choice is not the exit option
 
             print("{0:15} \t {1:15} \t {2:3} \t {3:3} \t {4:3} \t {5:3}".format(firstname[index], lastname[index], test1[index], test2[index], test3[index], teacher[index]))
 
+            
+
     else: #exit -- wont be in the loop at all 
 
         print("\n\tERROR\n")
 
 
     menu_choice = menu()
+#initialize found_index var
+found_index = "" #set as empty
+def seq_search(search_term):
+    for i in range(0, len(lastname)):
+        if lastname[i] == search_term:
+            found_index = i
+    return found_index
+
+search = input("Enter lsat name:")
+found = seq_search(search)
+
 
 print("\n\n\nthank you & goodbye!")
