@@ -89,4 +89,4 @@ for i in range(0, len(all_students)):
 #if average[i] >= 90
     #let_avg.append("a")
 #elif average[i] > = 80:   
-    #let_avg("b")
+    #let_avg.append("b")
