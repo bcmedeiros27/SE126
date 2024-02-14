@@ -1,14 +1,12 @@
 # Brandon Medeiros
-#Lab#4 individual
+#Lab MidTerm individual
 #2/5/24
-#Libary
+#Libary------------------------
 #display_menu(): #basic display menu
 #allGames(): #has a header and index for statment to print all games in the list
 #displayGames(attribute_list, attribute_name): #Uses two arguments, the first is for a list, the second is for what is being asked. attribute_name will be an enterd string while list will use the lists
 #randomGame():#uses random.int to generate index number
 #notice(attribute_list, atribute_name): #Gives user a list of options to chose from when picking a genre date etc.
-#functions
-#imports
 #release_year_list = [] list of release year
 # game_title_list = [] list of title
 # genre_list = [] list of genre
@@ -18,7 +16,7 @@
 # x = a false statment
 import csv
 import random #Random import. Uses a random number generator
-#functions
+#functions--
 def display_menu(): #basic display menu
     print("\nMenu:")
     print("1. Display all games")
