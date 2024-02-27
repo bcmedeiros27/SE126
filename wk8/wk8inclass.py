@@ -13,9 +13,11 @@ for i in range(0, len(row)):
     allFlight.append([row[i], seata[i], seatb[i], seatc[i], seatd[i]])
 print(allFlight)
 useR = int(input("enter:"))-1
-useS = int(input("enter"))
+useS = (input("enter"))
 for i in range(0, len(allFlight)):
     for x in range(0, len(allFlight[i])):
         print(f"{allFlight[i][x]:} ", end="") #Final index print statment
         
-print(allFlight[6])
+    print()
+if i in range(0, len(allFlight)):
+    ()
