@@ -1,0 +1,58 @@
+def display_menu():
+    print("Menu:")
+    print("1. See All Student Report")
+    print("2. Search for a Student [ID]")
+    print("3. Search for a Student [Last]")
+    print("4. View a Class Roster [class1, class2, and class3]")
+    print("5. Exit/Quit Program")
+    choice = input("Enter your choice: ")
+    return choice
+
+def read_file(filename):
+    students = []
+    with open(filename, 'r') as file:
+        for line in file:
+            student_data = line.strip().split()
+            students.append(student_data)
+    return students
+
+def main():
+    filename = "lab5.txt"
+    students = read_file(filename)
+    
+    while True:
+        choice = display_menu()
+        
+        if choice == "1":
+            # See All Student Report
+            for student in students:
+                print(student)
+        elif choice == "2":
+            # Search for a Student [ID]
+            student_id = input("Enter student ID: ")
+            for student in students:
+                if student[0] == student_id:
+                    print(student)
+        elif choice == "3":
+            # Search for a Student [Last]
+            last_name = input("Enter student last name: ")
+            for student in students:
+                if student[1] == last_name:
+                    print(student)
+        elif choice == "4":
+            # View a Class Roster [class1, class2, and class3]
+            class_name = input("Enter class name (class1, class2, or class3): ")
+            class_roster = []
+            for student in students:
+                if class_name in student[3:]:
+                    class_roster.append(student)
+            for student in class_roster:
+                print(student)
+        elif choice == "5":
+            # Exit/Quit Program
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
