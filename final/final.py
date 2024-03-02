@@ -132,7 +132,9 @@ def purchase1(purchase):
                 print("Seat purchased")
                 seat_map[seat][seatrow] = "*"
                 global seats
-                seats = seats + 1 
+                seats = seats + 1
+                global seats1
+                seats1 = seats1 + 1
                 return  purchase
                 
             else:
@@ -178,12 +180,16 @@ seat_map = {
     }
 purchase2 = 0
 totalSeats = 0
+purchase3 = 0
+seats = 0
+seats1 = 0
 while o:
 
     for i in range(len(rows)):
         print(f"{rows[i]:2} {' '.join(seat_map[letter][i] for letter in seat_map)}")
     print(f"Total seats purchased: {seats}\ntotal price: ${purchase2:.2f}")
     purchase = 0
+    
     menu()
     choice = input("Enter your choice: ")
     if choice == "1":
@@ -193,7 +199,8 @@ while o:
         input("Press enter to continue")
     elif choice == "3":
         print("Sales Information")
-        print("Number of seats sold: ", seats)
+        print("Number of seats sold: ", seats1)
+        print("total cost of all tickets sold: ", purchase3)
         print("Seats available in each row:")
         
         for i in range(1, len(rows)):
@@ -226,6 +233,7 @@ while o:
         print("Invalid choice")
         input("Press enter to continue")
     purchase2 += purchase
-
+    purchase3 += purchase
+    
 for i in range(len(rows)):
     print(f"{rows[i]:2} {' '.join(seat_map[letter][i] for letter in seat_map)}")
