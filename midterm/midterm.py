@@ -17,6 +17,24 @@
 import csv
 import random #Random import. Uses a random number generator
 #functions--
+def displayGames(attribute_list, attribute_name):
+    attribute = input(f"\nEnter {attribute_name} to display games: ")
+    print(f"\nGames with {attribute_name} '{attribute}':")
+    
+    # Bubble sort
+    for i in range(len(game_title_list)-1):
+        for j in range(len(game_title_list)-i-1):
+            if genre_list[j] > genre_list[j+1] :
+                # Swap elements
+                game_title_list[j], game_title_list[j+1] = game_title_list[j+1], game_title_list[j]
+                release_year_list[j], release_year_list[j+1] = release_year_list[j+1], release_year_list[j]
+                genre_list[j], genre_list[j+1] = genre_list[j+1], genre_list[j]
+                publisher_list[j], publisher_list[j+1] = publisher_list[j+1], publisher_list[j]
+                platform_list[j], platform_list[j+1] = platform_list[j+1], platform_list[j]
+    
+    for i in range(len(game_title_list)):
+        if attribute_list[i] == attribute:
+            print(f"{game_title_list[i]} ({release_year_list[i]}), Genre: {genre_list[i]}, Publisher: {publisher_list[i]}, Platform: {platform_list[i]}")
 def display_menu(): #basic display menu
     print("\nMenu:")
     print("1. Display all games")
@@ -30,13 +48,13 @@ def allGames(): #has a header and index for statment to print all games in the l
     print(f"{'Release Year':13} {'title':36}\t{'Genre':20} {'publisher':23} {'Platform':8}")
     for index in range(0, len(release_year_list)):
         print(f"{release_year_list[index]:13} {game_title_list[index]:36}\t{genre_list[index]:20} {publisher_list[index]:23} {platform_list[index]:8}")
-def displayGames(attribute_list, attribute_name): #Uses two arguments, the first is for a list, the second is for what is being asked. attribute_name will be an enterd string while list will use the lists
-    attribute = input(f"\nEnter {attribute_name} to display games: ") #uses the inputed argument IE horror/action etc
-    print(f"\nGames with {attribute_name} '{attribute}':")
-    for i in range(len(game_title_list)): #list cycles the names
-        if attribute_list[i] == attribute: #Finds a match to enterd attribute and prints all with that match
-            print(f"{game_title_list[i]} ({release_year_list[i]}), Genre: {genre_list[i]}, Publisher: {publisher_list[i]}, Platform: {platform_list[i]}")
-            #You found a hidden remark! Happy Grading!!!
+# def displayGames(attribute_list, attribute_name): #Uses two arguments, the first is for a list, the second is for what is being asked. attribute_name will be an enterd string while list will use the lists
+#     attribute = input(f"\nEnter {attribute_name} to display games: ") #uses the inputed argument IE horror/action etc
+#     print(f"\nGames with {attribute_name} '{attribute}':")
+#     for i in range(len(game_title_list)): #list cycles the names
+#         if attribute_list[i] == attribute: #Finds a match to enterd attribute and prints all with that match
+#             print(f"{game_title_list[i]} ({release_year_list[i]}), Genre: {genre_list[i]}, Publisher: {publisher_list[i]}, Platform: {platform_list[i]}")
+#             #You found a hidden remark! Happy Grading!!!
 def randomGame():
     index = randomnum() #useing random.int the index will become a random number, number is returned as an index.
     print(f"\nRandom Game: {game_title_list[index]} ({release_year_list[index]}), Genre: {genre_list[index]}, Publisher: {publisher_list[index]}, Platform: {platform_list[index]}")
